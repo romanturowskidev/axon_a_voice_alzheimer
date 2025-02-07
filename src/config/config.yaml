@@ -1,0 +1,32 @@
+
+# General configuration file
+
+app:
+  name: "Alzheimer Voice Analysis API"
+  version: "1.0.0"
+  debug: true
+  host: "0.0.0.0"
+  port: 5000
+
+model:
+  path: "../models/alzheimer_cnn.h5"
+  threshold: 0.5
+
+data:
+  raw_data_path: "../data/raw/"
+  processed_data_path: "../data/processed/"
+  feature_file: "../data/processed/audio_features.csv"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "../logs/app.log"
+
+
+# This file includes:
+
+# Application settings (name, version, debug mode, host, port)
+# Model settings (path to the trained model, prediction threshold)
+# Data paths (raw and processed data locations)
+# Logging settings (log level, format, and log file location)
+# You can modify this file to adjust parameters dynamically without changing the source code.

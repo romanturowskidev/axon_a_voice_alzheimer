@@ -1,0 +1,50 @@
+
+# Logging settings
+
+version: 1
+formatters:
+  detailed:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  simple:
+    format: "%(levelname)s - %(message)s"
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: simple
+    stream: ext://sys.stdout
+
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: "../logs/app.log"
+    mode: "a"
+
+loggers:
+  root:
+    level: DEBUG
+    handlers: [console, file]
+  app:
+    level: INFO
+    handlers: [console, file]
+    propagate: no
+
+
+# This file includes:
+
+# Formatters:
+
+# Detailed (timestamp, module, level, message)
+# Simple (only log level and message)
+# Handlers:
+
+# Console logging (prints logs to the terminal)
+# File logging (stores logs in ../logs/app.log with DEBUG level)
+
+# Loggers:
+
+# Root logger (logs everything)
+# Application logger (app) (logs INFO level messages)
+# This setup ensures structured logging with both console and file-based logs.

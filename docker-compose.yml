@@ -1,0 +1,44 @@
+# Docker Compose configuration
+
+version: '3.8'
+
+services:
+  alzheimer-api:
+    build: .
+    container_name: alzheimer-api-container
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src:/app/src
+      - ./models:/app/models
+      - ./data:/app/data
+    environment:
+      - MODEL_PATH=/app/models/alzheimer_cnn.h5
+      - DATA_PATH=/app/data/processed/audio_features.csv
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    container_name: alzheimer-db
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: alzheimer_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
+
+# This setup:
+
+# Runs the Alzheimer API inside a Docker container.
+# Mounts local directories (src, models, data) to the container.
+# Uses environment variables to configure paths for the model and data.
+# Includes a PostgreSQL database (db) for data persistence.
+# Automatically starts the database container before the API.
