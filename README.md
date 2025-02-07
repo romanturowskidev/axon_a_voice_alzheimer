@@ -21,6 +21,7 @@
 ---
 
 ## 📁 Project Structure
+```bash
   
 alzheimer-prediction/               # Root directory of the project
 │
@@ -84,3 +85,4 @@ alzheimer-prediction/               # Root directory of the project
 ├── pyproject.toml                  # Poetry configuration file for dependencies
 ├── README.md                       # Project documentation
 └── requirements.txt                # Python dependencies for pip
+```
