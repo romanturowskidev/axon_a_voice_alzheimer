@@ -10,7 +10,8 @@
 
 **Axon A Voice Alzheimer** is a project that leverages **artificial intelligence (AI) and audio processing** to aid in the **early detection of Alzheimer's disease** based on voice analysis. The model analyzes speech samples and classifies them as healthy or potentially indicative of the disease.
 
-🔹 **Technologies used**:  
+🔹 **Technologies used**:
+  
 - **Python**, **TensorFlow**, **Keras** – AI model training  
 - **Librosa**, **Scikit-learn** – Audio feature extraction  
 - **Flask**, **Streamlit** – API and user interface  
@@ -21,6 +22,7 @@
 ---
 
 ## 📁 Project Structure
+
 ```bash
   
 alzheimer-prediction/               # Root directory of the project
