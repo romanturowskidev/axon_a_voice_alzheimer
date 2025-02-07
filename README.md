@@ -25,7 +25,7 @@
 
 ```bash
   
-alzheimer-prediction/               # Root directory of the project
+axon_a_voice_alzheimer/             # Root directory of the project
 │
 ├── data/                           # Data storage
 │   ├── processed/                  # Preprocessed audio features
